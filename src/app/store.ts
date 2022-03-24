@@ -1,7 +1,15 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
+import { kinopoiskTop250Api } from '../shared/api/kinopoisk-top250'
+import { moviedb_filmsApi } from '../shared/api/moviedb-films'
+import rootReducer from '../shared/redux/reducers'
 
 export const store = configureStore({
-  reducer: {},
+  reducer: rootReducer,
+
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware()
+      .concat(moviedb_filmsApi.middleware)
+      .concat(kinopoiskTop250Api.middleware),
 })
 
 export type AppDispatch = typeof store.dispatch
