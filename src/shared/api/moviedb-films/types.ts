@@ -1,6 +1,6 @@
 export interface MovieList {
   page: number
-  results: MovieData
+  results: MovieData[]
 }
 
 export interface MovieDetails {
@@ -22,7 +22,6 @@ interface Genres {
 }
 interface MovieData {
   adult: boolean
-  created: string
   poster_path: string
   popularity: number
   title: string

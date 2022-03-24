@@ -1,14 +1,14 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
 import { MovieList, MovieDetails } from './types'
 
-export const theMoviedbApi = createApi({
-  reducerPath: 'moviedbApi',
+export const moviedb_filmsApi = createApi({
+  reducerPath: 'moviedb_filmsApi',
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URl }),
   endpoints: (builder) => ({
     getMoviesList: builder.query<MovieList, { category: string; page: number }>({
       query: (arg) => {
         const { category, page } = arg
-        return {
+        return {        
           url: `movie/${category}?api_key=${process.env.REACT_APP_API_KEY}&language=ru-RU&page=${page}`,
         }
       },
@@ -24,4 +24,4 @@ export const theMoviedbApi = createApi({
   }),
 })
 
-export const { useGetMoviesListQuery, useGetMovieDetailsQuery } = theMoviedbApi
+export const { useGetMoviesListQuery, useGetMovieDetailsQuery } = moviedb_filmsApi
