@@ -5,7 +5,28 @@ import { Container } from '../../shared/ui/container'
 import styles from './styles.module.scss'
 
 export const Header = () => {
-  const categories = ['films', 'serials', 'favorites']
+  const actions = [
+    {
+      id: 'films',
+      label: 'фильмы',
+      url: '/films',
+    },
+    {
+      id: 'serials',
+      label: 'сериалы',
+      url: '/serials',
+    },
+    {
+      id: 'fav',
+      label: 'избранное',
+      url: '/favorites',
+    },
+    {
+      id: 'top',
+      label: 'топ 250',
+      url: '/top',
+    },
+  ]
 
   return (
     <Container>
@@ -15,9 +36,9 @@ export const Header = () => {
         </div>
         <div className={cn(styles.root, 'flex font-semibold')}>
           <ul>
-            {categories.map((ct, idx) => (
-              <li key={idx}>
-                <Link to={ct}>{ct}</Link>
+            {actions.map(({ id, label, url }) => (
+              <li key={id}>
+                <Link to={url}>{label}</Link>
               </li>
             ))}
           </ul>
