@@ -5,5 +5,5 @@ interface Props {
 }
 
 export const Container = ({ children }: Props) => {
-  return <div className="container lg mx-auto antialiased">{children}</div>
+  return <div className="container lg mx-auto antialiased p-4">{children}</div>
 }
