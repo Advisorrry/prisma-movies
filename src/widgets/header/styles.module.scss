@@ -1,34 +1,25 @@
 .root {
-  ul {
-    display: flex;
-    margin-left: 96px;
-    text-decoration: inherit;
-    li {
-      margin-right: 64px;
-      text-decoration: none;
-      color: #6b66cc;
+  span {
+    text-decoration: none;
+    color: #6b66cc;
 
-      position: relative;
+    position: relative;
 
-      &:after {
-        background: none repeat scroll 0 0 transparent;
-        bottom: 0;
-        content: '';
-        display: block;
-        height: 2px;
-        left: 50%;
-        position: absolute;
-        background: #14b8a6;
-        transition: width 0.3s ease 0s, left 0.3s ease 0s;
-        width: 0;
-      }
-      &:hover:after {
-        width: 100%;
-        left: 0;
-      }
-      &:last-child {
-        margin-right: 8px;
-      }
+    &:after {
+      background: none repeat scroll 0 0 transparent;
+      bottom: 0;
+      content: '';
+      display: block;
+      height: 2px;
+      left: 50%;
+      position: absolute;
+      background: #14b8a6;
+      transition: width 0.3s ease 0s, left 0.3s ease 0s;
+      width: 0;
+    }
+    &:hover:after {
+      width: 100%;
+      left: 0;
     }
   }
 }

@@ -30,19 +30,17 @@ export const Header = () => {
 
   return (
     <Container>
-      <header className="flex py-2">
-        <div className="flex font-mono px-2 text-xl font-semibold tracking-wider	text-teal-500">
+      <header className="flex items-center justify-center flex-wrap bg-teal xs:justify-between ">
+        <div className="font-mono text-xl font-semibold tracking-wider	text-teal-500">
           <Link to="/">prisma_movie</Link>
         </div>
-        <div className={cn(styles.root, 'flex font-semibold')}>
-          <ul>
-            {actions.map(({ id, label, url }) => (
-              <li key={id}>
-                <Link to={url}>{label}</Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <nav className={cn(styles.root, 'flex font-semibold')}>
+          {actions.map(({ id, label, url }) => (
+            <Link to={url} className="mr-5 lg:mr-10 last:mr-0" key={id}>
+              <span>{label}</span>
+            </Link>
+          ))}
+        </nav>
       </header>
     </Container>
   )
