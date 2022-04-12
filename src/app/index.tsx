@@ -1,7 +1,7 @@
-import { Example } from '../pages'
+import { Routing } from '../pages'
 import { withHocs } from './hocs'
 import './styles/index.scss'
 
-const App = () => <Example />
+const App = () => <Routing />
 
 export default withHocs(App)
