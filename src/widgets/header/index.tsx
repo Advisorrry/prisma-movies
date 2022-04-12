@@ -14,7 +14,7 @@ export const Header = () => {
     {
       id: 'serials',
       label: 'сериалы',
-      url: '/serials',
+      url: '/series',
     },
     {
       id: 'fav',
