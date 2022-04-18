@@ -1,11 +1,11 @@
-import React from 'react'
+import cn from 'classnames'
 import styles from './burger.module.scss'
 
 export const Burger = () => {
   return (
     <div className={styles.root}>
       <div className={styles.burger__dropdown}>
-        <nav className={styles.burger_nav_menu}>
+        <nav className={cn(styles.burger_nav_menu, 'w-auto md:w-80')}>
           <ul className="w-full">
             {genres.map(({ title, emoji, genre_id }) => {
               return (
@@ -15,7 +15,7 @@ export const Burger = () => {
                     'rounded-full text-xl flex-wrap hover:shadow-md p-3 mb-2 hover:bg-purple-300 focus:bg-purple-400 text-left transition duration-150 ease-in-out cursor-pointer'
                   }>
                   <div className={styles.list_item_content}>
-                    <div className="text-lg leading-6 font-medium">
+                    <div className="text-xl md:text-lg leading-6 font-medium">
                       <span className="mr-4 w-6 h-6">{emoji}</span>
                       <span>{title}</span>
                     </div>
