@@ -7,9 +7,7 @@ export const store = configureStore({
   reducer: rootReducer,
 
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware()
-      .concat(moviedb_filmsApi.middleware)
-      .concat(kinopoiskApi.middleware),
+    getDefaultMiddleware().concat(moviedb_filmsApi.middleware).concat(kinopoiskApi.middleware),
 })
 
 export type AppDispatch = typeof store.dispatch

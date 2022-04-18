@@ -1,4 +1,3 @@
-import React from 'react'
 import { Title } from '../../../shared/ui/title'
 
 export const Catecory = () => {

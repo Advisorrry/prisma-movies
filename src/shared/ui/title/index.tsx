@@ -1,10 +1,10 @@
-import cn from "classnames"
+import cn from 'classnames'
 import React from 'react'
 
 interface Props {
-    children: React.ReactNode
-    className?: string
-  }
+  children: React.ReactNode
+  className?: string
+}
 
 export const Title = ({ children, className }: Props) => {
   return (
@@ -13,5 +13,3 @@ export const Title = ({ children, className }: Props) => {
     </span>
   )
 }
-
-
