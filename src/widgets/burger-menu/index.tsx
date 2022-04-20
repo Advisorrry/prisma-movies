@@ -12,7 +12,7 @@ export const Burger = () => {
                 <li
                   key={genre_id}
                   className={
-                    'rounded-full text-xl flex-wrap hover:shadow-md p-3 mb-2 hover:bg-purple-300 focus:bg-purple-400 text-left transition duration-150 ease-in-out cursor-pointer'
+                    'rounded-full text-xl flex-wrap hover:shadow-md p-3 mb-2 hover:bg-violet-300 text-left transition duration-150 ease-in-out cursor-pointer'
                   }>
                   <div className={styles.list_item_content}>
                     <div className="text-xl md:text-lg leading-6 font-medium">
