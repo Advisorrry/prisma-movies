@@ -8,7 +8,7 @@ export const moviedb_filmsApi = createApi({
     getMoviesList: builder.query<MovieList, { category: string; page: number }>({
       query: (arg) => {
         const { category, page } = arg
-        return {        
+        return {
           url: `movie/${category}?api_key=${process.env.REACT_APP_API_KEY}&language=ru-RU&page=${page}`,
         }
       },

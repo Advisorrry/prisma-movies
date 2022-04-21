@@ -20,10 +20,11 @@ interface Genres {
   id: number
   name: string
 }
-interface MovieData {
+export interface MovieData {
   adult: boolean
   poster_path: string
   popularity: number
   title: string
   vote_average: number
+  id: number
 }
