@@ -1,0 +1,39 @@
+.root {
+  position: relative;
+  inset: 0px auto auto 0px;
+  transform: translate(0px, 40px);
+  background-color: #fff;
+}
+
+.burger__dropdown {
+  display: block;
+  transition: opacity 0.2s, transform 0.2s;
+  --offset-y: -8px;
+}
+
+.burger_nav_menu {
+  padding: 27px 27px 32px;
+  border-radius: 24px;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+  box-sizing: border-box;
+  max-height: calc(100vh - 128px);
+  padding: 4px 0;
+
+  padding: 20px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(117, 115, 111, 0.2);
+  transition: box-shadow 0.3s ease-out;
+}
+
+.list_item_content {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 3px 0;
+  border-top: 1px solid transparent;
+  align-items: center;
+  justify-content: space-between;
+  align-content: center;
+}
