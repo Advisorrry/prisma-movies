@@ -27,4 +27,5 @@ export interface MovieData {
   title: string
   vote_average: number
   id: number
+  release_date: string
 }
