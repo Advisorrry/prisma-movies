@@ -1,34 +1,46 @@
 import { Link } from 'react-router-dom'
 import type { ReactNode } from 'react'
+import dayjs from 'dayjs'
+import cn from 'classnames'
+import styles from './card.module.scss'
 
 interface Props {
   children: ReactNode
   rating: number
   id: number
   posterPath: string
+  date: string
 }
 
-export const Card = ({ children, rating, posterPath, id }: Props) => {
-  const posterImage = `${process.env.REACT_APP_IMAGE_W500_URL}${posterPath}`
+export const Card = ({ children, rating, posterPath, id, date }: Props) => {
+  const posterImage = `${process.env.REACT_APP_IMAGE_ORIGINAL_URL}${posterPath}`
+
+  const dateFormat = dayjs(date).format('DD MMM YYYY')
 
   return (
-    <div className="relative flex bg-white hover:bg-slate-100 duration-200 rounded-xl shadow-lg drop-shadow-xl">
-      <Link to={String(id)}>
-        <div className="mx-auto my-auto flex p-2 duration-200 ">
-          <img className="rounded-lg" src={posterImage} alt="Постер" />
-        </div>
+    <div className="flex flex-wrap bg-white duration-200 rounded-xl shadow-lg drop-shadow-xl">
+      <div className={cn(styles.root, 'h-fit flex  p-2')}>
+        <Link to={String(id)}>
+          <img alt="ds" src={posterImage} className="rounded-lg" />
+        </Link>
+      </div>
 
-        <div className="p-5">
-          <h5 className="mb-2 flex justify-center text-base md:text-xl lg:text-2xl font-bold tracking-tight text-gray-900">
-            <Svg />
-            <span>{rating}</span>
-          </h5>
-
-          <h4 className="mb-3 flex justify-center font-normal text-base md:text-xl  text-gray-700">
-            <span>{children}</span>
-          </h4>
+      <div className="px-3 py-5 whitespace-normal min-h-min">
+        <span className="mb-2 flex items-center text-base md:text-xl font-bold tracking-tight text-gray-900">
+          <Svg />
+          <span>{rating}</span>
+        </span>
+        <div className="flex flex-wrap justify-start break-words">
+          <span className="w-full font-semibold text-lg duration-200 text-gray-700 hover:text-gray-900">
+            <Link to={String(id)}>
+              <span>{children}</span>
+            </Link>
+          </span>
+          <span className="font-normal text-sm left-0 text-neutral-700">
+            <div>{dateFormat}</div>
+          </span>
         </div>
-      </Link>
+      </div>
     </div>
   )
 }
