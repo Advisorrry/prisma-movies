@@ -1,10 +1,5 @@
 import { Link } from 'react-router-dom'
 import type { ReactNode } from 'react'
-import { useEffect } from 'react'
-import dayjs from 'dayjs'
-import 'dayjs/locale/ru'
-import cn from 'classnames'
-import styles from './card.module.scss'
 
 interface Props {
   children: ReactNode
@@ -14,20 +9,12 @@ interface Props {
   date: string
 }
 
-export const Card = ({ children, rating, posterPath, id, date }: Props) => {
-  useEffect(() => {
-    dayjs.locale('ru')
-  }, [])
-
-  const posterImage = `${process.env.REACT_APP_IMAGE_W500_URL}${posterPath}`
-
-  const dateFormat = dayjs(date).format('DD MMM YYYY')
-
+export const CardKinopoisk = ({ children, rating, posterPath, id, date }: Props) => {
   return (
     <div className="flex flex-wrap bg-white duration-200 rounded-xl shadow-lg drop-shadow-xl">
-      <div className={cn(styles.root, 'h-fit flex  p-2')}>
+      <div className="h-fit flex p-2">
         <Link to={String(id)}>
-          <img alt={String(children)} src={posterImage} className="rounded-lg" />
+          <img alt={String(children)} src={posterPath} className="rounded-lg" />
         </Link>
       </div>
 
@@ -43,7 +30,7 @@ export const Card = ({ children, rating, posterPath, id, date }: Props) => {
             </Link>
           </span>
           <span className="font-normal text-sm left-0 text-neutral-700">
-            <div>{dateFormat}</div>
+            <div>{date}</div>
           </span>
         </div>
       </div>

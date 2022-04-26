@@ -1,4 +1,5 @@
 import React from 'react'
+import { useSearchParams } from 'react-router-dom'
 import { useGetMoviesListQuery } from '../../shared/api/moviedb-films'
 import { Card } from '../../shared/ui/card'
 import { Container } from '../../shared/ui/container'
@@ -7,17 +8,26 @@ import { Spinner } from '../../shared/ui/spinner'
 
 const Films = () => {
   const [page, setPage] = React.useState('1')
-  const { data, isFetching } = useGetMoviesListQuery({ category: 'popular', page: page })
+  // const [searchParams, setSearchParams] = useSearchParams()
+  // const post = searchParams.get('page')
+
+  const { data, isFetching, isError } = useGetMoviesListQuery({ category: 'popular', page: page })
 
   // const handle = (e: React.ChangeEvent<HTMLInputElement>) => {
+  //   e.preventDefault()
   //   setTimeout(() => {
   //     setPage(e.target.value)
   //   }, 1000)
-  //   console.log(e.target.value)
+
+  //   setSearchParams({page: page})
   // }
 
   // console.log(isFetching)
 
+  if (isError)
+    return (
+      <Layout>Ошибка при загрузки данных. Попробуйте включить VPN и перезагрузить страницу</Layout>
+    )
   return (
     <Container>
       <Layout>
@@ -41,9 +51,5 @@ const Films = () => {
     </Container>
   )
 }
-
-// const Skeleton = () => {
-//   return (Array(10).fill(0).map((_, idx) => <Spinner key={idx} />)})
-// }
 
 export default Films
