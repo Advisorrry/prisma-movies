@@ -1,5 +1,5 @@
 export interface KinopoiskMoviesTop250List {
-  films: KinopoiskMovieDetails[]
+  films: KinopoiskFilmsData[]
   pageCount: number
 }
 
@@ -19,8 +19,13 @@ interface KinopoiskMovieDetails {
   year: string
 }
 interface KinopoiskFilmsGenreDetails {
-  kinopoiskId: number
+  filmId: number
   nameRu: string
   posterUrlPreview: string
-  ratingKinopoisk: number
+  rating: number
+  year: string
+}
+
+interface KinopoiskFilmsData extends KinopoiskFilmsGenreDetails {
+
 }

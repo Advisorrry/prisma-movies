@@ -5,7 +5,7 @@ export const moviedb_filmsApi = createApi({
   reducerPath: 'moviedb_filmsApi',
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URl }),
   endpoints: (builder) => ({
-    getMoviesList: builder.query<MovieList, { category: string; page: string }>({
+    getMoviesList: builder.query<MovieList, { category: string; page: string | null }>({
       query: (arg) => {
         const { category, page } = arg
         return {
