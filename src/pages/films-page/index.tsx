@@ -1,28 +1,19 @@
-import React from 'react'
+import { useCallback, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useGetMoviesListQuery } from '../../shared/api/moviedb-films'
 import { Card } from '../../shared/ui/card'
 import { Container } from '../../shared/ui/container'
 import { Layout } from '../../shared/ui/layout/layout'
 import { Spinner } from '../../shared/ui/spinner'
+import { Pagination } from '../../widgets/pagination'
 
 const Films = () => {
-  const [page, setPage] = React.useState('1')
-  // const [searchParams, setSearchParams] = useSearchParams()
-  // const post = searchParams.get('page')
-
+  const [page, setPage] = useState<number>(1)
   const { data, isFetching, isError } = useGetMoviesListQuery({ category: 'popular', page: page })
 
-  // const handle = (e: React.ChangeEvent<HTMLInputElement>) => {
-  //   e.preventDefault()
-  //   setTimeout(() => {
-  //     setPage(e.target.value)
-  //   }, 1000)
-
-  //   setSearchParams({page: page})
-  // }
-
-  // console.log(isFetching)
+  const currentPage = (c: number) => {
+    return setPage(c)
+  }
 
   if (isError)
     return (
@@ -30,11 +21,11 @@ const Films = () => {
     )
   return (
     <Container>
-      <Layout>
-        {isFetching ? (
-          <Spinner />
-        ) : (
-          data?.results.map(({ id, poster_path, title, vote_average, release_date }) => {
+      {isFetching ? (
+        <Spinner />
+      ) : (
+        <Layout>
+          {data?.results.map(({ id, poster_path, title, vote_average, release_date }) => {
             return (
               <Card
                 key={id}
@@ -45,9 +36,10 @@ const Films = () => {
                 {title}
               </Card>
             )
-          })
-        )}
-      </Layout>
+          })}
+        </Layout>
+      )}
+      <Pagination setPage={currentPage} totalPages={50} currentPage={page} />
     </Container>
   )
 }

@@ -1,12 +1,19 @@
 import React from 'react'
 import { useGetTvListQuery } from '../../shared/api/moviedb-tv'
+import { usePagination } from '../../shared/lib/hooks'
 import { Card } from '../../shared/ui/card'
 import { Container } from '../../shared/ui/container'
 import { Layout } from '../../shared/ui/layout/layout'
 import { Spinner } from '../../shared/ui/spinner'
+import { Pagination } from '../../widgets/pagination'
 
 const Series = () => {
-  const { data, isFetching, isError } = useGetTvListQuery({ category: 'top_rated', page: '1' })
+  // const { setPage, totalPages, currentPage } = usePagination(50, 1)
+
+  const { data, isFetching, isError } = useGetTvListQuery({
+    category: 'top_rated',
+    page: 1,
+  })
 
   if (isError)
     return (
@@ -32,6 +39,7 @@ const Series = () => {
           })
         )}
       </Layout>
+      {/* <Pagination setPage={setPage} totalPages={totalPages} currentPage={currentPage} /> */}
     </Container>
   )
 }

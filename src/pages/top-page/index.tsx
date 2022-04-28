@@ -7,6 +7,7 @@ import { Spinner } from '../../shared/ui/spinner'
 
 const TopFilms = () => {
   const { data, isFetching, isError } = useGetTop250Query({ page: '1' })
+  
 
   if (isError) {
     return (
