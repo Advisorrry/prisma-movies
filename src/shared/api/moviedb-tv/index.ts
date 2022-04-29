@@ -1,12 +1,11 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { NoSubstitutionTemplateLiteral } from 'typescript';
-import { TvList, TvDetails } from './types'
+import { TvList, TvDetails, Category } from './types'
 
 export const moviedb_tvApi = createApi({
   reducerPath: 'moviedb_tvApi',
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URl }),
   endpoints: (builder) => ({
-    getTvList: builder.query<TvList, { category: string; page: number }>({
+    getTvList: builder.query<TvList, { category: Category | string; page: number }>({
       query: (arg) => {
         const { category, page } = arg
         return {

@@ -2,6 +2,11 @@ export interface TvList {
   page: number
   results: TvData[]
 }
+export enum Category {
+  TOP_RATED = 'top_rated',
+  POPULAR = 'popular',
+  LATEST = 'latest',
+}
 
 export interface TvDetails {
   adult: boolean
