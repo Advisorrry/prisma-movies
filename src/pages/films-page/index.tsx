@@ -1,6 +1,7 @@
-import { useCallback, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useGetMoviesListQuery } from '../../shared/api/moviedb-films'
+import { Category } from '../../shared/api/moviedb-films/types'
 import { Card } from '../../shared/ui/card'
 import { Container } from '../../shared/ui/container'
 import { Layout } from '../../shared/ui/layout/layout'
@@ -8,12 +9,26 @@ import { Spinner } from '../../shared/ui/spinner'
 import { Pagination } from '../../widgets/pagination'
 
 const Films = () => {
-  const [page, setPage] = useState<number>(1)
-  const { data, isFetching, isError } = useGetMoviesListQuery({ category: 'popular', page: page })
+  const [searchParams, setSearchParams] = useSearchParams()
+  const pageQuery = searchParams.get('page')
+  const categoryQuery = searchParams.get('category')
 
-  const currentPage = (c: number) => {
-    return setPage(c)
-  }
+  const [page, setPage] = useState<number>(Number(pageQuery) || 1)
+  const [category, setcategory] = useState<Category | string>(
+    String(categoryQuery) === 'null' ? Category.POPULAR : String(categoryQuery),
+  )
+
+  const { data, isFetching, isError } = useGetMoviesListQuery({
+    category: category,
+    page: page,
+  })
+
+  useEffect(() => {
+    const params = Object.fromEntries([...searchParams])
+    console.log('Mounted:', params)
+
+    setSearchParams({ page: String(page), category: category })
+  }, [searchParams, page, category, setSearchParams])
 
   if (isError)
     return (
@@ -39,7 +54,7 @@ const Films = () => {
           })}
         </Layout>
       )}
-      <Pagination setPage={currentPage} totalPages={50} currentPage={page} />
+      <Pagination setPage={setPage} totalPages={50} currentPage={page} />
     </Container>
   )
 }
