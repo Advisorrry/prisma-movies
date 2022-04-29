@@ -23,7 +23,7 @@ const Footer = memo(() => {
                 clipRule="evenodd"
               />
             </svg>
-            <span>advisorry </span>
+            <span>advisorrry </span>
           </a>
           <span className="text-base">2022</span>
         </div>
