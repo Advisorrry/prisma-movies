@@ -3,7 +3,7 @@ import React, { useState, useEffect, memo } from 'react'
 interface Props {
   totalPages: number
   currentPage: number
-  setPage: any
+  setPage: (p: number) => void
 }
 
 export const Pagination: React.FC<Props> = memo(({ setPage, totalPages, currentPage }) => {
