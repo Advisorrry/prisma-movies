@@ -3,6 +3,12 @@ export interface MovieList {
   results: MovieData[]
 }
 
+export enum Category {
+  TOP_RATED = 'top_rated',
+  POPULAR = 'popular',
+  UPCOMING = 'upcoming',
+}
+
 export interface MovieDetails {
   adult: boolean
   budget: number
@@ -15,11 +21,6 @@ export interface MovieDetails {
   title: string
   vote_average: number
 }
-
-interface Genres {
-  id: number
-  name: string
-}
 export interface MovieData {
   adult: boolean
   poster_path: string
@@ -27,4 +28,10 @@ export interface MovieData {
   title: string
   vote_average: number
   id: number
+  release_date: string
+}
+
+interface Genres {
+  id: number
+  name: string
 }
