@@ -34,28 +34,26 @@ const Series = () => {
     return (
       <Layout>Ошибка при загрузки данных. Попробуйте включить VPN и перезагрузить страницу</Layout>
     )
+  if (isFetching) return <Spinner />
   return (
-    <Container>
-      {isFetching ? (
-        <Spinner />
-      ) : (
-        <Layout>
-          {data?.results.map(({ id, poster_path, name, vote_average, first_air_date }) => {
-            return (
-              <Card
-                key={id}
-                id={id}
-                rating={vote_average}
-                posterPath={poster_path}
-                date={first_air_date}>
-                {name}
-              </Card>
-            )
-          })}
-        </Layout>
-      )}
+    <>
+      <Layout>
+        {data?.results.map(({ id, poster_path, name, vote_average, first_air_date }) => {
+          return (
+            <Card
+              key={id}
+              id={id}
+              rating={vote_average}
+              posterPath={poster_path}
+              date={first_air_date}>
+              {name}
+            </Card>
+          )
+        })}
+      </Layout>
+
       <Pagination setPage={setPage} totalPages={50} currentPage={page} />
-    </Container>
+    </>
   )
 }
 

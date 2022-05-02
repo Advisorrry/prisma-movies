@@ -34,28 +34,28 @@ const Films = () => {
     return (
       <Layout>Ошибка при загрузки данных. Попробуйте включить VPN и перезагрузить страницу</Layout>
     )
+  if (isFetching) {
+    return <Spinner />
+  }
   return (
-    <Container>
-      {isFetching ? (
-        <Spinner />
-      ) : (
-        <Layout>
-          {data?.results.map(({ id, poster_path, title, vote_average, release_date }) => {
-            return (
-              <Card
-                key={id}
-                id={id}
-                rating={vote_average}
-                posterPath={poster_path}
-                date={release_date}>
-                {title}
-              </Card>
-            )
-          })}
-        </Layout>
-      )}
+    <>
+      <Layout>
+        {data?.results.map(({ id, poster_path, title, vote_average, release_date }) => {
+          return (
+            <Card
+              key={id}
+              id={id}
+              rating={vote_average}
+              posterPath={poster_path}
+              date={release_date}>
+              {title}
+            </Card>
+          )
+        })}
+      </Layout>
+
       <Pagination setPage={setPage} totalPages={50} currentPage={page} />
-    </Container>
+    </>
   )
 }
 
