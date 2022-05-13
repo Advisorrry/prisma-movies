@@ -1,5 +1,5 @@
 import React, { lazy } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import { Header } from '../widgets/header'
 import { Options } from '../widgets/options-group'
 
@@ -15,11 +15,11 @@ export const Routing = () => {
       <Header />
       <Options />
       <Routes>
-        <Route path="/" element={<FilmsPage />} />
         <Route path="/films" element={<FilmsPage />} />
         <Route path="/series" element={<SeriesPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/top" element={<TopPage />} />
+        <Route path="/" element={<Navigate to="/films" replace />} />
       </Routes>
       <Footer />
     </div>

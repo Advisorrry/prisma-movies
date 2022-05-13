@@ -33,7 +33,7 @@ export const Header = () => {
     <Container>
       <header className="flex items-center justify-center flex-wrap bg-teal sm:justify-between ">
         <div className="font-mono text-xl font-semibold tracking-wider text-teal-500">
-          <Link to="/">prisma_movies</Link>
+          <Link to="/films">prisma_movies</Link>
         </div>
         <nav className={cn(styles.root, 'flex font-semibold text-xl lg:text-lg')}>
           {actions.map(({ id, label, url }) => (
