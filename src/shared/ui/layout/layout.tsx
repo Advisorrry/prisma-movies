@@ -13,7 +13,7 @@ export const Layout = ({ children }: Props) => {
       <div
         className={cn(
           styles.root,
-          'grid justify-items-center mx-auto mt-10 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-3 xs:gap-6 xl:gap-10',
+          'grid justify-items-center mx-auto mt-10 grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-3 xs:gap-6 xl:gap-10',
         )}>
         {children}
       </div>
