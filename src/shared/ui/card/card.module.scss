@@ -1,0 +1,15 @@
+.root {
+  overflow: hidden;
+}
+
+.root img {
+  background-image: linear-gradient(rgb(226, 217, 217), rgb(235, 216, 216));
+  width: 100%;
+  min-height: 270px;
+  object-fit: cover;
+  display: block;
+
+  @media (min-width: 500px) {
+    height: 100%;
+  }
+}
