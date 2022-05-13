@@ -47,7 +47,9 @@ export const Pagination: React.FC<Props> = memo(({ setPage, totalPages, currentP
           key={i}
           onClick={() => setCurrent(pg.page)}
           className={`h-12 border-2 border-r-0 border-indigo-400
-               w-12 ${current === pg.page && 'bg-indigo-400 text-white'}`}>
+               w-12 hover:bg-indigo-400 hover:text-white transition duration-300 ease-in-out ${
+                 current === pg.page && 'bg-indigo-400 text-white'
+               }`}>
           {pg.page}
         </button>
       ))}
