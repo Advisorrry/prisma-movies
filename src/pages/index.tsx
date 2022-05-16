@@ -1,5 +1,6 @@
-import React, { lazy } from 'react'
+import { lazy } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
+import { Container } from '../shared/ui/container'
 import { Header } from '../widgets/header'
 import { Options } from '../widgets/options-group'
 

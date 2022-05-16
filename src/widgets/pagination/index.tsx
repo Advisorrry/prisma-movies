@@ -10,6 +10,10 @@ export const Pagination: React.FC<Props> = memo(({ setPage, totalPages, currentP
   let [num, setNum] = useState(1)
   let [current, setCurrent] = useState(currentPage)
 
+  if (current > totalPages) {
+    alert('такой страницы не существует')
+    setCurrent(1)
+  }
   useEffect(() => {
     setPage(current)
   }, [current, setPage])
@@ -22,7 +26,7 @@ export const Pagination: React.FC<Props> = memo(({ setPage, totalPages, currentP
     { page: num + 4 },
   ]
   function onNext() {
-    if (num > totalPages - 4) return
+    if (num > totalPages - 5) return
     setNum(++num)
   }
   function onBack() {
