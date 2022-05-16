@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom'
 import type { ReactNode } from 'react'
+import cn from 'classnames'
+import styles from './card.module.scss'
 
 interface Props {
   children: ReactNode
@@ -12,7 +14,7 @@ interface Props {
 export const CardKinopoisk = ({ children, rating, posterPath, id, date }: Props) => {
   return (
     <div className="flex flex-wrap bg-white duration-200 rounded-xl shadow-lg drop-shadow-xl">
-      <div className="h-fit flex p-2">
+      <div className={cn(styles.root, 'p-2')}>
         <Link to={String(id)}>
           <img alt={String(children)} src={posterPath} className="rounded-lg" />
         </Link>
