@@ -10,7 +10,7 @@ export const kinopoiskApi = createApi({
   reducerPath: 'kinopoiskApi',
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_KINOPOISK_BASE_URl }),
   endpoints: (builder) => ({
-    getTop250: builder.query<KinopoiskMoviesTop250List, { page: string }>({
+    getTop250: builder.query<KinopoiskMoviesTop250List, { page: number }>({
       query: (arg) => {
         const { page } = arg
         return {
