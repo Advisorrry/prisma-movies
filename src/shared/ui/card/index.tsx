@@ -18,7 +18,11 @@ export const Card = ({ children, rating, posterPath, id, date }: Props) => {
   const dateFormat = dayjs(date).format('DD MMM YYYY')
 
   return (
-    <div className="flex flex-wrap bg-white duration-200 rounded-xl shadow-lg drop-shadow-xl">
+    <div
+      className={cn(
+        styles.mw,
+        'flex flex-wrap bg-white duration-200 rounded-xl shadow-lg drop-shadow-xl',
+      )}>
       <div className={cn(styles.root, 'p-2')}>
         <Link to={String(id)}>
           <img alt={String(children)} src={posterImage} className="rounded-lg" />

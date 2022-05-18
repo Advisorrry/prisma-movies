@@ -1,7 +1,7 @@
 import { memo } from 'react'
 import { Container } from '../../shared/ui/container'
 
-const Footer = memo(() => {
+export const Footer = memo(() => {
   return (
     <Container>
       <footer className="flex items-center justify-center p-1 bg-white rounded-lg shadow bottom-0">
@@ -31,5 +31,3 @@ const Footer = memo(() => {
     </Container>
   )
 })
-
-export default Footer
