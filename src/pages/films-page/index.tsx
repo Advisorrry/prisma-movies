@@ -5,6 +5,7 @@ import { Category } from '../../shared/api/moviedb-films/types'
 import { Card } from '../../shared/ui/card'
 import { Layout } from '../../shared/ui/layout/layout'
 import { Spinner } from '../../shared/ui/spinner'
+import { Footer } from '../../widgets/footer'
 import { Pagination } from '../../widgets/pagination'
 
 const Films = () => {
@@ -54,6 +55,7 @@ const Films = () => {
       </Layout>
 
       <Pagination setPage={setPage} totalPages={50} currentPage={page} />
+      <Footer />
     </>
   )
 }

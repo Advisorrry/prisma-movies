@@ -1,14 +1,13 @@
 import { lazy } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
-import { Container } from '../shared/ui/container'
 import { Header } from '../widgets/header'
 import { Options } from '../widgets/options-group'
+import { FilmDetails } from './films-page/film-details'
 
 const FavoritesPage = lazy(() => import('./favorites-page'))
 const SeriesPage = lazy(() => import('./series-page'))
 const FilmsPage = lazy(() => import('./films-page'))
 const TopPage = lazy(() => import('./top-page'))
-const Footer = lazy(() => import('../widgets/footer'))
 
 export const Routing = () => {
   return (
@@ -17,12 +16,12 @@ export const Routing = () => {
       <Options />
       <Routes>
         <Route path="/films" element={<FilmsPage />} />
+        <Route path="/films/:filmId" element={<FilmDetails />} />
         <Route path="/series" element={<SeriesPage />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/top" element={<TopPage />} />
         <Route path="/" element={<Navigate to="/films" replace />} />
       </Routes>
-      <Footer />
     </div>
   )
 }

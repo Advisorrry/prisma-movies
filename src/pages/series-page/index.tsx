@@ -3,9 +3,9 @@ import { useSearchParams } from 'react-router-dom'
 import { useGetTvListQuery } from '../../shared/api/moviedb-tv'
 import { Category } from '../../shared/api/moviedb-tv/types'
 import { Card } from '../../shared/ui/card'
-import { Container } from '../../shared/ui/container'
 import { Layout } from '../../shared/ui/layout/layout'
 import { Spinner } from '../../shared/ui/spinner'
+import { Footer } from '../../widgets/footer'
 import { Pagination } from '../../widgets/pagination'
 
 const Series = () => {
@@ -53,6 +53,7 @@ const Series = () => {
       </Layout>
 
       <Pagination setPage={setPage} totalPages={50} currentPage={page} />
+      <Footer />
     </>
   )
 }

@@ -4,6 +4,7 @@ import { useGetTop250Query } from '../../shared/api/kinopoisk-movies'
 import { CardKinopoisk } from '../../shared/ui/card-kinopoisk'
 import { Layout } from '../../shared/ui/layout/layout'
 import { Spinner } from '../../shared/ui/spinner'
+import { Footer } from '../../widgets/footer'
 import { Pagination } from '../../widgets/pagination'
 
 const TopFilms = () => {
@@ -47,6 +48,7 @@ const TopFilms = () => {
         })}
       </Layout>
       <Pagination currentPage={page} totalPages={13} setPage={setPage} />
+      <Footer />
     </>
   )
 }
