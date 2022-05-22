@@ -12,7 +12,7 @@ export enum Category {
 export interface MovieDetails {
   adult: boolean
   budget: number
-  genres: Genres
+  genres: Genres[]
   overview: string
   poster_path: string
   release_date: string

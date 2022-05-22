@@ -13,7 +13,7 @@ export const moviedb_filmsApi = createApi({
         }
       },
     }),
-    getMovieDetails: builder.query<MovieDetails, { movieId: number }>({
+    getMovieDetails: builder.query<MovieDetails, { movieId: string }>({
       query: (arg) => {
         const { movieId } = arg
         return {
