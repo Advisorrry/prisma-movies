@@ -6,16 +6,14 @@ export const moviedb_tvApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URl }),
   endpoints: (builder) => ({
     getTvList: builder.query<TvList, { category: Category | string; page: number }>({
-      query: (arg) => {
-        const { category, page } = arg
+      query: ({ category, page }) => {
         return {
           url: `tv/${category}?api_key=${process.env.REACT_APP_API_KEY}&language=ru-RU&page=${page}`,
         }
       },
     }),
     getTvDetails: builder.query<TvDetails, { tvId: number }>({
-      query: (arg) => {
-        const { tvId } = arg
+      query: ({ tvId }) => {
         return {
           url: `tv/${tvId}?api_key=${process.env.REACT_APP_API_KEY}&language=ru-RU`,
         }

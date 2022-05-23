@@ -6,16 +6,14 @@ export const moviedb_filmsApi = createApi({
   baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URl }),
   endpoints: (builder) => ({
     getMoviesList: builder.query<MovieList, { category: Category | string; page: number }>({
-      query: (arg) => {
-        const { category, page } = arg
+      query: ({ category, page }) => {
         return {
           url: `movie/${category}?api_key=${process.env.REACT_APP_API_KEY}&language=ru-RU&page=${page}`,
         }
       },
     }),
     getMovieDetails: builder.query<MovieDetails, { movieId: string }>({
-      query: (arg) => {
-        const { movieId } = arg
+      query: ({ movieId }) => {
         return {
           url: `movie/${movieId}?api_key=${process.env.REACT_APP_API_KEY}&language=ru-RU`,
         }
