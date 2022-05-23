@@ -1,10 +1,8 @@
-import React from 'react'
 import { useParams } from 'react-router-dom'
 import { Container } from '../../../shared/ui/container'
 import { useGetMovieDetailsQuery } from '../../../shared/api/moviedb-films'
-import { CardDetail } from './card-detail'
 import { Spinner } from '../../../shared/ui/spinner'
-import { Footer } from '../../../widgets/footer'
+import { FilmDetailsTemplate } from '../../../shared/ui/movie-details/film-details'
 
 type Params = {
   filmId: string
@@ -26,7 +24,7 @@ export const FilmDetails = () => {
     <>
       <Container>
         {
-          <CardDetail
+          <FilmDetailsTemplate
             budget={data.budget}
             posterPath={posterImage}
             title={data.title}

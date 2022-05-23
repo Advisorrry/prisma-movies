@@ -1,10 +1,3 @@
-import cn from 'classnames'
-import styles from './film-details.module.scss'
-
-interface Genres {
-  id: number
-  name: string
-}
 interface Props {
   posterPath: string
   rating: number
@@ -17,7 +10,7 @@ interface Props {
   title: string
 }
 
-export const CardDetail = ({
+export const FilmDetailsTemplate = ({
   posterPath,
   rating,
   date,
@@ -29,10 +22,10 @@ export const CardDetail = ({
   title,
 }: Props) => {
   return (
-    <div className={cn(styles.screen, 'text-lg')}>
+    <div className="text-lg">
       <div className="flex flex-col md:flex-row justify-items-start   ">
         <div className="flex items-center justify-center md:mr-9">
-          <img className="w-64 h-96 rounded-lg" src={posterPath} alt="123" />
+          <img className="w-64 h-96 rounded-lg" src={posterPath} alt={title} />
         </div>
         <div className="mb-2 mt-2 w-full lg:w-2/3">
           <h2 className="text-2xl subpixel-antialiased font-bold mb-1 justify-center">{title}</h2>
@@ -46,11 +39,11 @@ export const CardDetail = ({
             <span>бюджет: ${budget?.toLocaleString('ru')}</span>
             <span>сборы: ${revenue?.toLocaleString('ru')}</span>
           </div>
+          <div className="text-xl w-full sm:w-3/4">
+            <h5 className="my-2">Описание: </h5>
+            <div className="text-xl leading-7">{overview}</div>
+          </div>
         </div>
-      </div>
-      <div className="text-xl w-full md:w-1/2 sm:w-3/4">
-        <h5>Описание: </h5>
-        <div className="mt-2 text-xl leading-7">{overview}</div>
       </div>
     </div>
   )
