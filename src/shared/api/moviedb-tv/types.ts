@@ -13,8 +13,11 @@ export interface TvDetails {
   overview: string
   poster_path: string
   first_air_date: string
+  last_air_date: string
   name: string
   vote_average: number
+  number_of_seasons: number
+  genres: { id: number; name: string }[]
 }
 
 export interface TvData {

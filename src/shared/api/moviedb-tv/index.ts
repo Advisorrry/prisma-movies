@@ -12,7 +12,7 @@ export const moviedb_tvApi = createApi({
         }
       },
     }),
-    getTvDetails: builder.query<TvDetails, { tvId: number }>({
+    getTvDetails: builder.query<TvDetails, { tvId: string }>({
       query: ({ tvId }) => {
         return {
           url: `tv/${tvId}?api_key=${process.env.REACT_APP_API_KEY}&language=ru-RU`,
