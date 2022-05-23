@@ -1,8 +1,9 @@
 import { lazy } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { Header } from '../widgets/header'
-import { Options } from '../widgets/options-group'
 import { FilmDetails } from './films-page/film-details'
+import { SeriesDetails } from './series-page/series-details'
+import { TopDetails } from './top-page/top-details'
 
 const FavoritesPage = lazy(() => import('./favorites-page'))
 const SeriesPage = lazy(() => import('./series-page'))
@@ -18,8 +19,10 @@ export const Routing = () => {
         <Route path="/films" element={<FilmsPage />} />
         <Route path="/films/:filmId" element={<FilmDetails />} />
         <Route path="/series" element={<SeriesPage />} />
+        <Route path="/series/:tvId" element={<SeriesDetails />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/top" element={<TopPage />} />
+        <Route path="/top/:topId" element={<TopDetails />} />
         <Route path="/" element={<Navigate to="/films" replace />} />
       </Routes>
     </div>
