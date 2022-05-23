@@ -13,7 +13,7 @@ export const Routing = () => {
   return (
     <div className="App">
       <Header />
-      <Options />
+      {/* <Options /> потом подумаю как лучше это реализовать */}
       <Routes>
         <Route path="/films" element={<FilmsPage />} />
         <Route path="/films/:filmId" element={<FilmDetails />} />
