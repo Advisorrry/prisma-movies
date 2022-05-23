@@ -16,9 +16,6 @@ const TopFilms = () => {
   const { data, isFetching, isError } = useGetTop250Query({ page: page })
 
   useEffect(() => {
-    const params = Object.fromEntries([...searchParams])
-    console.log('Mounted:', params)
-
     setSearchParams({ page: String(page) })
   }, [searchParams, page, setSearchParams])
 
