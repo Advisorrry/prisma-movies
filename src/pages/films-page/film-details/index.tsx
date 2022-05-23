@@ -15,31 +15,30 @@ export const FilmDetails = () => {
   const { data, isFetching, isError } = useGetMovieDetailsQuery({ movieId: String(filmId) })
   const posterImage = `${process.env.REACT_APP_IMAGE_ORIGINAL_URL}${data?.poster_path}`
 
-  if (isError) {
-    return <div>Error</div>
+  if (isError || !data) {
+    return <div>Something went wrong</div>
   }
+
   if (isFetching) {
     return <Spinner />
   }
-
   return (
     <>
       <Container>
         {
           <CardDetail
-            budget={data?.budget}
+            budget={data.budget}
             posterPath={posterImage}
-            title={data?.title}
-            date={data?.release_date}
-            overview={data?.overview}
-            rating={data?.vote_average}
-            runtime={data?.runtime}
-            genre={data?.genres}
-            revenue={data?.revenue}
+            title={data.title}
+            date={data.release_date}
+            overview={data.overview}
+            rating={data.vote_average}
+            runtime={data.runtime}
+            genre={data.genres}
+            revenue={data.revenue}
           />
         }
       </Container>
-      <Footer />
     </>
   )
 }

@@ -6,15 +6,15 @@ interface Genres {
   name: string
 }
 interface Props {
-  posterPath: string | undefined
-  rating: number | undefined
-  date: string | undefined
-  genre?: { id: number; name: string }[] | undefined
-  budget: number | undefined
-  revenue: number | undefined
-  overview: string | undefined
-  runtime: number | undefined
-  title: string | undefined
+  posterPath: string
+  rating: number
+  date: string
+  genre?: { id: number; name: string }[]
+  budget: number
+  revenue: number
+  overview: string
+  runtime: number
+  title: string
 }
 
 export const CardDetail = ({
@@ -31,7 +31,7 @@ export const CardDetail = ({
   return (
     <div className={cn(styles.screen, 'text-lg')}>
       <div className="flex flex-col md:flex-row justify-items-start   ">
-        <div className="flex items-center justify-center xl:mr-9">
+        <div className="flex items-center justify-center md:mr-9">
           <img className="w-64 h-96 rounded-lg" src={posterPath} alt="123" />
         </div>
         <div className="mb-2 mt-2 w-full lg:w-2/3">

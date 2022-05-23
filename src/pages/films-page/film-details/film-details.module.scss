@@ -1,21 +1,8 @@
-// .list {
-//   span {
-//     position: relative;
-//   }
-//   span:not(:first-child) {
-//     text-decoration: none;
-
-//     &:before {
-//       content: '';
-//       display: flex;
-//       position: absolute;
-//       background: black;
-
-//       height: 100%;
-//       width: 1.5px;
-//     }
-//   }
-// }
+.root {
+  position: relative;
+}
 .screen {
-  height: 83vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
 }
