@@ -16,3 +16,12 @@
 - **Routing**: `react-router v6`
 - **Lint**: `eslint`, `prettier`
 - **Architecture**: `feature-sliced`
+
+Сайт:
+
+### https://prisma-movies.web.app/
+
+![desktop](https://i.ibb.co/6tkLxhV/2022-05-24-12-42-12.png)
+![desktop](https://i.ibb.co/6Fq4BhP/2022-05-24-12-42-32.png)
+![mobile](https://i.ibb.co/pbg2QJV/Screenshot-2022-05-24-12-46-53-87-1ffb234d33525882661a5a8d47829dc1.jpg)
+![mobile](https://i.ibb.co/bNKVL4j/Screenshot-2022-05-24-12-48-27-20-1ffb234d33525882661a5a8d47829dc1.jpg)
