@@ -22,7 +22,7 @@
 <img src="https://i.ibb.co/6tkLxhV/2022-05-24-12-42-12.png"
      alt="desktop 1"
      style="width: 800px" />
-<img src="https://i.ibb.co/6tkLxhV/2022-05-24-12-42-12.png"
+<img src="https://i.ibb.co/6Fq4BhP/2022-05-24-12-42-32.png"
      alt="desktop 2"
      style="width: 800px" />
 <img src="https://i.ibb.co/pbg2QJV/Screenshot-2022-05-24-12-46-53-87-1ffb234d33525882661a5a8d47829dc1.jpg"
