@@ -13,13 +13,12 @@ export const SeriesDetails = () => {
 
   const { data, isFetching, isError } = useGetTvDetailsQuery({ tvId: String(tvId) })
   const posterImage = `${process.env.REACT_APP_IMAGE_ORIGINAL_URL}${data?.poster_path}`
-  console.log(data)
 
-  if (isError || !data) {
+  if (isError) {
     return <div>Something went wrong</div>
   }
 
-  if (isFetching) {
+  if (isFetching || !data) {
     return <Spinner />
   }
   return (

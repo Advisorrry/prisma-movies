@@ -13,11 +13,11 @@ export const FilmDetails = () => {
   const { data, isFetching, isError } = useGetMovieDetailsQuery({ movieId: String(filmId) })
   const posterImage = `${process.env.REACT_APP_IMAGE_ORIGINAL_URL}${data?.poster_path}`
 
-  if (isError || !data) {
+  if (isError) {
     return <div>Something went wrong</div>
   }
 
-  if (isFetching) {
+  if (isFetching || !data) {
     return <Spinner />
   }
   return (
