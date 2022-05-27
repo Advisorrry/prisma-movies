@@ -22,7 +22,7 @@ export const Routing = () => {
         <Route path="/series/:tvId" element={<SeriesDetails />} />
         <Route path="/favorites" element={<FavoritesPage />} />
         <Route path="/top" element={<TopPage />} />
-        <Route path="/top/:topId" element={<TopDetails />} />
+        <Route path="/top/:filmId" element={<TopDetails />} />
         <Route path="/" element={<Navigate to="/films" replace />} />
       </Routes>
     </div>
