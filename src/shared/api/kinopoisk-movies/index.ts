@@ -1,5 +1,5 @@
 import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-import { KinopoiskMoviesTop250List, KinopoiskFilmsGenre } from './types'
+import { KinopoiskMoviesTop250List, KinopoiskFilmsGenre, KinopoiskMovieDetails } from './types'
 
 const headers = {
   'X-API-KEY': process.env.REACT_APP_KINOPOISK_API_KEY,
@@ -26,7 +26,15 @@ export const kinopoiskApi = createApi({
         }
       },
     }),
+    getTop250Details: builder.query<KinopoiskMovieDetails, { filmId: string }>({
+      query: ({ filmId }) => {
+        return {
+          headers,
+          url: `${filmId}`,
+        }
+      },
+    }),
   }),
 })
 
-export const { useGetTop250Query, useGetFilmsByGenreQuery } = kinopoiskApi
+export const { useGetTop250Query, useGetFilmsByGenreQuery, useGetTop250DetailsQuery } = kinopoiskApi

@@ -8,15 +8,18 @@ export interface KinopoiskFilmsGenre {
   totalPages: number
 }
 
-interface KinopoiskMovieDetails {
+export interface KinopoiskMovieDetails {
   filmId: number
-  filmLength: number
-  genres: []
+  genres: {
+    genre: string
+  }[]
   nameRu: string
   posterUrl: string
-  posterUrlPreview: string
-  rating: string
   year: string
+  ratingKinopoisk: number
+  description: string
+  shortDescription: string
+  filmLength: number
 }
 interface KinopoiskFilmsGenreDetails {
   filmId: number
@@ -26,6 +29,13 @@ interface KinopoiskFilmsGenreDetails {
   year: string
 }
 
-interface KinopoiskFilmsData extends KinopoiskFilmsGenreDetails {
-
+interface KinopoiskFilmsData {
+  filmId: number
+  filmLength: number
+  genres: []
+  nameRu: string
+  posterUrl: string
+  posterUrlPreview: string
+  rating: number
+  year: string
 }
