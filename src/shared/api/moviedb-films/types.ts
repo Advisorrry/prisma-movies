@@ -6,7 +6,7 @@ export interface MovieList {
 export enum Category {
   TOP_RATED = 'top_rated',
   POPULAR = 'popular',
-  UPCOMING = 'upcoming',
+  NOW_PLAYING = 'now_playing',
 }
 
 export interface MovieDetails {

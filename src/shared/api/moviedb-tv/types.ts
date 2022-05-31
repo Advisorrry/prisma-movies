@@ -5,7 +5,7 @@ export interface TvList {
 export enum Category {
   TOP_RATED = 'top_rated',
   POPULAR = 'popular',
-  LATEST = 'latest',
+  AIRING_TODAY = 'airing_today',
 }
 
 export interface TvDetails {
