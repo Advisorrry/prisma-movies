@@ -5,6 +5,7 @@ import { Category } from '../../shared/api/moviedb-tv/types'
 import { Card } from '../../shared/ui/card'
 import { Layout } from '../../shared/ui/layout/layout'
 import { Spinner } from '../../shared/ui/spinner'
+import { CategoryGroup } from '../../widgets/category'
 import { Footer } from '../../widgets/footer'
 import { Pagination } from '../../widgets/pagination'
 
@@ -14,7 +15,7 @@ const Series = () => {
   const categoryQuery = searchParams.get('category')
 
   const [page, setPage] = useState<number>(Number(pageQuery) || 1)
-  const [category] = useState<Category | string>(
+  const [category, setCategory] = useState<Category | string>(
     String(categoryQuery) === 'null' ? Category.TOP_RATED : String(categoryQuery),
   )
 
@@ -34,6 +35,7 @@ const Series = () => {
   if (isFetching) return <Spinner />
   return (
     <>
+      <CategoryGroup items={actions} setCategory={setCategory} category={category} page={'tv'} />
       <Layout>
         {data?.results.map(({ id, poster_path, name, vote_average, first_air_date }) => {
           return (
@@ -54,5 +56,11 @@ const Series = () => {
     </>
   )
 }
+
+const actions = [
+  { name: 'популярные', cat: Category.POPULAR },
+  { name: 'лучшие', cat: Category.TOP_RATED },
+  { name: 'в эфире', cat: Category.AIRING_TODAY },
+]
 
 export default Series
