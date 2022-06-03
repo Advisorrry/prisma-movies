@@ -35,7 +35,7 @@ const Series = () => {
   if (isFetching) return <Spinner />
   return (
     <>
-      <CategoryGroup items={actions} setCategory={setCategory} category={category} page={'tv'} />
+      <CategoryGroup items={actions} setCategory={setCategory} category={category} />
       <Layout>
         {data?.results.map(({ id, poster_path, name, vote_average, first_air_date }) => {
           return (
@@ -58,8 +58,8 @@ const Series = () => {
 }
 
 const actions = [
-  { name: 'популярные', cat: Category.POPULAR },
   { name: 'лучшие', cat: Category.TOP_RATED },
+  { name: 'популярные', cat: Category.POPULAR },
   { name: 'в эфире', cat: Category.AIRING_TODAY },
 ]
 

@@ -37,7 +37,7 @@ const Films = () => {
   }
   return (
     <>
-      <CategoryGroup items={actions} setCategory={setCategory} category={category} page={'film'} />
+      <CategoryGroup items={actions} setCategory={setCategory} category={category} />
       <Layout>
         {data?.results.map(({ id, poster_path, title, vote_average, release_date }) => {
           return (
@@ -60,7 +60,7 @@ const Films = () => {
 }
 
 const actions = [
-  { name: 'сейчас смотрят', cat: Category.NOW_PLAYING },
+  { name: 'смотрят', cat: Category.NOW_PLAYING },
   { name: 'популярные', cat: Category.POPULAR },
   { name: 'лучшие', cat: Category.TOP_RATED },
 ]
