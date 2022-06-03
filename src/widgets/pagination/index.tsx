@@ -33,7 +33,7 @@ export const Pagination: React.FC<Props> = memo(({ setPage, totalPages, currentP
     num > 1 && setNum(--num)
   }
   return (
-    <div className="flex justify-center mt-3 bg-white rounded-lg">
+    <div className="flex justify-center my-4 bg-white rounded-lg">
       <button
         onClick={onBack}
         className="h-12 border-2 border-r-0 border-indigo-400

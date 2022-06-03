@@ -29,7 +29,7 @@ export const Card = ({ children, rating, posterPath, id, date }: Props) => {
         </Link>
       </div>
 
-      <div className="px-3 py-5 whitespace-normal min-h-min">
+      <div className="px-3 py-4 whitespace-normal min-h-min">
         <span className="mb-2 flex items-center text-base md:text-xl font-bold tracking-tight text-gray-900">
           <Svg />
           <span>{rating}</span>

@@ -31,7 +31,7 @@ export const Header = () => {
 
   return (
     <Container>
-      <header className="flex items-center justify-center flex-wrap bg-teal sm:justify-between ">
+      <header className="flex items-center justify-center flex-wrap bg-teal xs:justify-between ">
         <div className="font-mono text-xl font-semibold tracking-wider text-teal-500">
           <Link to="/films">prisma_movies</Link>
         </div>
