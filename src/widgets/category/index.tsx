@@ -9,7 +9,7 @@ interface Props {
   items: { name: string; cat: string }[]
   setCategory: (c: string) => void
   category: string
-  page: string
+  page: 'film' | 'tv'
 }
 
 export const CategoryGroup = ({ items, setCategory, category, page }: Props) => {
