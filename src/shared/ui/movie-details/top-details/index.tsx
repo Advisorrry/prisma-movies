@@ -22,7 +22,7 @@ export const TopDetailsTemplate = ({
   runtime,
 }: Props) => {
   return (
-    <div className="text-lg">
+    <div className="text-lg mt-4">
       <div className="flex flex-col md:flex-row justify-items-start   ">
         <div className="flex items-center justify-center md:mr-9">
           <img className="w-64 h-96 rounded-lg" src={posterUrl} alt={title} />
@@ -31,17 +31,15 @@ export const TopDetailsTemplate = ({
           <h2 className="flex text-2xl subpixel-antialiased font-bold mb-1 justify-center md:justify-start">
             {title}
           </h2>
-          <div className="flex w-full sm:w-2/3 items-center justify-between">
-            <span className="font-semibold">Рейтинг: {rating}</span>
-            <span>{year}</span>
-            <span>{genres[0].genre}</span>
-            <span>{runtime} м.</span>
+          <div className="flex w-full sm:w-2/3 items-center justify-between mb-4">
+            <span className="font-semibold drop-shadow-xl bg-white p-2 rounded-lg">
+              Рейтинг: {rating}
+            </span>
+            <span className="drop-shadow-xl bg-white p-2 rounded-lg">{year}</span>
+            <span className="drop-shadow-xl bg-white p-2 rounded-lg">{genres[0].genre}</span>
+            <span className="drop-shadow-xl bg-white p-2 rounded-lg">{runtime} м.</span>
           </div>
-          {/* <div className="flex flex-col">
-            <span>бюджет: ${budget?.toLocaleString('ru')}</span>
-            <span>сборы: ${revenue?.toLocaleString('ru')}</span>
-          </div> */}
-          <div className="text-xl w-full sm:w-3/4">
+          <div className="text-xl w-full sm:w-2/4 drop-shadow-xl bg-white p-4 rounded-lg">
             <h5 className="my-2">Описание: </h5>
             <div className="text-xl leading-7">{shortDescription}</div>
             <div className="text-xl leading-7">{description}</div>
