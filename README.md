@@ -19,19 +19,20 @@
 - **Lint**: `eslint`, `prettier`
 - **Architecture**: `feature-sliced`
 
+
 ## Сайт: https://prisma-movies.web.app/
 
-<img src="https://i.ibb.co/6tkLxhV/2022-05-24-12-42-12.png"
+<img src="https://i.ibb.co/cgdff5X/2022-09-23-17-00-49.png"
      alt="desktop 1"
      style="width: 800px" />
-<img src="https://i.ibb.co/6Fq4BhP/2022-05-24-12-42-32.png"
+<img src="https://i.ibb.co/5jkvSkW/2022-09-23-17-01-09.png"
      alt="desktop 2"
      style="width: 800px" />
-<img src="https://i.ibb.co/pbg2QJV/Screenshot-2022-05-24-12-46-53-87-1ffb234d33525882661a5a8d47829dc1.jpg"
-     alt="modile 1"
+<img src="https://i.ibb.co/dfBQFTN/IMG-20220923-170406-286.jpg"
+     alt="mobile 1"
      style="width: 300px" />
-<img src="https://i.ibb.co/bNKVL4j/Screenshot-2022-05-24-12-48-27-20-1ffb234d33525882661a5a8d47829dc1.jpg"
-     alt="modile 2"
+<img src="https://i.ibb.co/6XDKhSM/IMG-20220923-170406-652.jpg"
+     alt="mobile 2"
      style="width: 300px" />
 
 
