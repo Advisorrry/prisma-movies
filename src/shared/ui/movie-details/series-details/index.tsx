@@ -1,3 +1,5 @@
+import { RatingSvg } from '../../SVG/rating'
+
 interface Props {
   overview: string
   posterPath: string
@@ -20,7 +22,7 @@ export const SeriesDetailsTemplate = ({
   numberOfSeasons,
 }: Props) => {
   return (
-    <div className="text-lg">
+    <div className="text-lg mt-4">
       <div className="flex flex-col md:flex-row justify-items-start">
         <div className="flex items-center justify-center md:mr-9">
           <img className="w-64 h-96 rounded-lg" src={posterPath} alt={name} />
@@ -30,8 +32,9 @@ export const SeriesDetailsTemplate = ({
             {name}
           </h2>
           <div className="flex sm:w-2/3 items-center justify-between mb-4">
-            <span className="font-semibold  drop-shadow-xl bg-white p-2 rounded-lg ">
-              рейтинг: {rating}
+            <span className="flex items-center font-semibold  drop-shadow-xl bg-white p-2 rounded-lg ">
+              <RatingSvg margin={1} />
+              <span>{rating}</span>
             </span>
             <span className="drop-shadow-xl bg-white p-2 rounded-lg">{genre?.[0].name}</span>
             <span className="drop-shadow-xl bg-white p-2 rounded-lg">

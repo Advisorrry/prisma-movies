@@ -1,3 +1,5 @@
+import { RatingSvg } from '../../SVG/rating'
+
 interface Props {
   genres: {
     genre: string
@@ -32,8 +34,9 @@ export const TopDetailsTemplate = ({
             {title}
           </h2>
           <div className="flex w-full sm:w-2/3 items-center justify-between mb-4">
-            <span className="font-semibold drop-shadow-xl bg-white p-2 rounded-lg">
-              Рейтинг: {rating}
+            <span className="flex items-center font-semibold  drop-shadow-xl bg-white p-2 rounded-lg ">
+              <RatingSvg margin={1} />
+              <span>{rating}</span>
             </span>
             <span className="drop-shadow-xl bg-white p-2 rounded-lg">{year}</span>
             <span className="drop-shadow-xl bg-white p-2 rounded-lg">{genres[0].genre}</span>
