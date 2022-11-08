@@ -28,10 +28,10 @@
 <img src="https://i.ibb.co/5jkvSkW/2022-09-23-17-01-09.png"
      alt="desktop 2"
      style="width: 800px" />
-<img src="https://i.ibb.co/dfBQFTN/IMG-20220923-170406-286.jpg"
+<img src="https://i.ibb.co/k2pk9xh/Screenshot-2022-11-08-21-52-51-59-40deb401b9ffe8e1df2f1cc5ba480b12.jpg"
      alt="mobile 1"
      style="width: 300px" />
-<img src="https://i.ibb.co/6XDKhSM/IMG-20220923-170406-652.jpg"
+<img src="https://i.ibb.co/YhDtHdm/Screenshot-2022-11-08-21-53-33-20-40deb401b9ffe8e1df2f1cc5ba480b12.jpg"
      alt="mobile 2"
      style="width: 300px" />
 
